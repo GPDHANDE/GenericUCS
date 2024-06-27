@@ -18,7 +18,7 @@ public class MaxOfThree
 	        if (b.compareTo(max) > 0) {
 	            max = b;
 	        }
-	        else if (c.compareTo(max) > 0) {
+	        if (c.compareTo(max) > 0) {
 	            max = c;
 	        }
 	        return max;
