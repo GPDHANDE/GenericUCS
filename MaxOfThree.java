@@ -2,42 +2,45 @@ package org.genericus;
 
 public class MaxOfThree 
 {
-		private static Integer num1;
-		private static Integer num2;
-		private static Integer num3;
+		private static float a;
+		private static float b;
+		private static float c;
 		
 		
-		 public static Integer MaximumOfThree(Integer num1,Integer num2,Integer num3)
-		 {
-			Integer max = num1;
-			if(num2.compareTo(max)>0)
-			{
-				max = num2;
-			}
-			else if(num3.compareTo(max)>0)
-			{
-				max = num3;
-			}
-			return max;
-		 }
+//		 public static Float MaximumOfThree(float num1,float num2,float num3)
+//		 {
+//			float c = Math.max(Math.max(num1, num2), num3);
+//			return c;
+//		 }
+		
+		public static Float MaximumOfThree(Float a, Float b, Float c) {
+	        Float max = a;
+	        if (b.compareTo(max) > 0) {
+	            max = b;
+	        }
+	        else if (c.compareTo(max) > 0) {
+	            max = c;
+	        }
+	        return max;
+	    }
 		public static void main(String[] args) 
 		{
 	        // Test case 1: Max number at 1st position
-	        Integer a = 10;
-	        Integer b = 5;
-	        Integer c = 3;
+		    a=10.0f;
+		    b=5.15f;
+		    c=3.41f;
 	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
 
 	        // Test case 2: Max number at 2nd position
-	        a = 5;
-	        b = 10;
-	        c = 3;
+	        a = 5.15f;
+	        b = 10.0f;
+	        c = 3.41f;
 	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
 
 	        // Test case 3: Max number at 3rd position
-	        a = 5;
-	        b = 3;
-	        c = 10;
+	        a = 5.15f;
+	        b = 3.41f;
+	        c = 10.0f;
 	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
 			
 		}
