@@ -39,6 +39,7 @@ public class MaxOfThree<T extends Comparable<T>>
 		System.out.println("Maximum of float is "+Max(10.34f,73.2f,23.4f,43.7f,54.90f));
 		
 
+
         // Test case 3: Max string
       
 		String[] words = {"apple", "banana", "pear", "kiwi"};
