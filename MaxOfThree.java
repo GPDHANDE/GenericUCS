@@ -1,46 +1,55 @@
 package org.genericus;
 
-public class MaxOfThree
+public class MaxOfThree<T extends Comparable<T>>
 {
+	private  T a;
+	private T b;
+	private T c;
+	
+	
 		
-		public static <T extends Comparable<T>> T MaximumOfThree(T a, T b,T c)
+	public MaxOfThree(T a, T b, T c) 
+	{
+		this.a = a;
+		this.b = b;
+		this.c = c;
+	}
+
+
+	public T testMaximum()
+	{
+		return testMaximum(a,b,c);
+	}
+	
+	public static <T extends Comparable > T testMaximum(T a,T b,T c)
+	{
+		T max = a;
+		if(b.compareTo(max)>0)
 		{
-			T max = a;
-			if(b.compareTo(max)>0)
-			{
-				max = b;
-			}
-			if(c.compareTo(max)>0)
-			{
-				max =c;
-			}
-			return max;
+			max = b;
 		}
-
-		
-		
-		public static void main(String[] args) 
+		if(c.compareTo(max)>0)
 		{
-			// Test case 1: Max number at 1st position
-	        Integer a = 10;
-	        Integer b = 5;
-	        Integer c = 3;
-	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
-	        
-	        // Test case 1: Max float at 1st position
-	        Float a1 = 10.5f;
-	        Float b1 = 5.2f;
-	        Float c1 = 3.1f;
-	        System.out.println("Maximum of " + a1 + ", " + b1 + ", " + c1 + " is " + MaximumOfThree(a1, b1, c1));
-	        
-	        String a2 = "zelda";
-	        String b2 = "apple";
-	        String c2 = "banana";
-	        System.out.println("Maximum of \"" + a2 + "\", \"" + b2 + "\", \"" + c2 + "\" is \"" + MaximumOfThree(a2, b2, c2) + "\"");
+			max = c;
+		}
+		return max;
+	}
+	
+	public static void main(String[] args) 
+	{
+		//Test case 1: Max int
+		MaxOfThree<Integer> m = new MaxOfThree<Integer>(87, 113, 191);
+		System.out.println("Maximum of " + m.a + ", " + m.b + ", " + m.c + " is "+m.testMaximum());
+		
+		//Test case 2: Max float
+		MaxOfThree<Float> floatFinder = new MaxOfThree<>(10.5f, 5.2f, 3.1f);
+        System.out.println("Maximum of " + floatFinder.a + ", " + floatFinder.b + ", " + floatFinder.c + " is " + floatFinder.testMaximum());
 
-
-	        
-	    }
+        // Test case 3: Max string
+        MaxOfThree<String> stringFinder = new MaxOfThree<>("zelda", "apple", "banana");
+        System.out.println("Maximum of \"" + stringFinder.a + "\", \"" + stringFinder.b + "\", \"" + stringFinder.c + "\" is \"" + stringFinder.testMaximum() + "\"");
+		
+    }
 	        
 			
 
