@@ -2,6 +2,7 @@ package org.genericus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class MaxOfThree<T extends Comparable<T>>
 {
@@ -12,9 +13,22 @@ public class MaxOfThree<T extends Comparable<T>>
 		{
 			throw new IllegalArgumentException("At least one element is required");
 		}
-		Arrays.sort(elements);
+		T max = elements[0];
+		for (int i = 1; i < elements.length; i++) 
+		{
+			if(elements[i].compareTo(max)>0)
+			{
+				max = elements[i];
+			}
+		}
+		printMax(max);
 		
-		return elements[elements.length-1];
+		return max;
+	}
+	
+	public static <T> void printMax(T max)
+	{
+		System.out.println("Maximum value: " + max);
 	}
 	public static <T extends Comparable > T testMaximum(T a,T b,T c)
 	{
