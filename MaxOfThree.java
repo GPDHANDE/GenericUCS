@@ -1,15 +1,11 @@
 package org.genericus;
 
-public class MaxOfThree 
+public class MaxOfThree
 {
-		private static Integer a;
-		private static Integer b;
-		private static Integer c;
 		
-		
-		public static Integer MaximumOfThree(Integer a,Integer b, Integer c)
+		public static <T extends Comparable<T>> T MaximumOfThree(T a, T b,T c)
 		{
-			Integer max =a;
+			T max = a;
 			if(b.compareTo(max)>0)
 			{
 				max = b;
@@ -18,8 +14,10 @@ public class MaxOfThree
 			{
 				max =c;
 			}
-			return max;	
+			return max;
 		}
+
+		
 		
 		public static void main(String[] args) 
 		{
@@ -28,17 +26,20 @@ public class MaxOfThree
 	        Integer b = 5;
 	        Integer c = 3;
 	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
-	        // Test case 2: Max number at 2nd position
-	        a = 5;
-	        b = 10;
-	        c = 3;
-	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
+	        
+	        // Test case 1: Max float at 1st position
+	        Float a1 = 10.5f;
+	        Float b1 = 5.2f;
+	        Float c1 = 3.1f;
+	        System.out.println("Maximum of " + a1 + ", " + b1 + ", " + c1 + " is " + MaximumOfThree(a1, b1, c1));
+	        
+	        String a2 = "zelda";
+	        String b2 = "apple";
+	        String c2 = "banana";
+	        System.out.println("Maximum of \"" + a2 + "\", \"" + b2 + "\", \"" + c2 + "\" is \"" + MaximumOfThree(a2, b2, c2) + "\"");
 
-	        // Test case 3: Max number at 3rd position
-	        a = 5;
-	        b = 3;
-	        c = 10;
-	        System.out.println("Maximum of " + a + ", " + b + ", " + c + " is " + MaximumOfThree(a, b, c));
+
+	        
 	    }
 	        
 			
